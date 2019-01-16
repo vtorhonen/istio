@@ -43,9 +43,10 @@ items:
       heritage: {{ .Release.Service }}
       release: {{ .Release.Name }}
   spec:
+    type: {{ .Values.service.type }}
     ports:
-      - name: http-query
-        port: 80
+      - port: 80
+        name: http-query
         protocol: TCP
 {{ if eq .Values.provider "jaeger" }}
         targetPort: 16686
