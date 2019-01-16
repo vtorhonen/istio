@@ -52,6 +52,8 @@ service:
   name: http
   type: ClusterIP
   externalPort: 9411
+  loadBalancerIP:
+  loadBalancerSourceRanges:
 
 ingress:
   enabled: false
