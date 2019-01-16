@@ -15,10 +15,10 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.externalPort }}
-    targetPort: 20001
+  - name: {{ .Values.service.name }}
     protocol: TCP
-    name: {{ .Values.service.name }}
+    port: {{ .Values.service.externalPort }}
+    targetPort: 20001
   selector:
     app: kiali
 {{- if .Values.service.loadBalancerIP }}
