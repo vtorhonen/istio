@@ -30,7 +30,6 @@ metadata:
   name: prometheus-nodeport
   namespace: {{ .Release.Namespace }}
   annotations:
-    prometheus.io/scrape: 'true'
     {{- range $key, $val := .Values.service.nodePort.annotations }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
